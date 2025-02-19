@@ -2,7 +2,7 @@
 
 - Use in case memoize `function` only.
 - **Important: By default, when a component re-renders, React re-renders all of its children recursively even props is same.**
-  - Solve by wrap with `React.memo(<Component />)
+  - Solve by wrap with `React.memo(<Component />)`
 
 ## How it work?
 
