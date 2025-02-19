@@ -1,12 +1,12 @@
 # `useCallback` use for what?
 
 - Use in case memoize `function` only.
-- **important: By default, when a component re-renders, React re-renders all of its children recursively even props is same.**
+- **Important: By default, when a component re-renders, React re-renders all of its children recursively even props is same.**
 
 ## How it work?
 
 - When react re-render your component if you define function without `useCallback` it will **recreated everytime** when this component re-render.
-- let say this component re-render **100 times** then this function will recreated **100 times**.
+- Let say this component re-render **100 times** then this function will recreated **100 times**.
 - Wrap when `useCallback` your function will recreated depend on dependencies changed.
 
 ## What does it mean dependencies changed?
@@ -59,10 +59,10 @@ const UsersManagement = () => {
 ## My perspective for `useCallback`
 
 - `useCallback` make the code hard to readable.
-- use when it really need.
-- memory usage: if you function does not recreated i will throught sometime that mean they will store in someway in memory right?
+- Use when it really need.
+- Memory usage: if you function does not recreated i will reconize something in this when using `useCallback` mean they will store in someway in memory right?
 
 ## Should you add `useCallback` everywhere?
 
-- if your page is static content the answer is unnecessary.
-- if your page like my example or something is re-render often such as typing, drag and drop.
+- If your page is static content the answer is unnecessary.
+- If your page like my example or something is re-render often such as typing, drag and drop.
