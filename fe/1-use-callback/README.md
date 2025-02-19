@@ -7,7 +7,7 @@
 
 - When react re-render your component if you define function without `useCallback` it will **recreated everytime** when this component re-render.
 - Let say this component re-render **100 times** then this function will recreated **100 times**.
-- Wrap when `useCallback` your function will recreated depend on dependencies changed.
+- Wrap with `useCallback` your function will recreated depend on dependencies changed.
 
 ## What does it mean dependencies changed?
 
