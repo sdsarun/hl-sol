@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16.8
+    container_name: hl-test-db
+    restart: always
+    volumes:
+      - hl_db_test_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=P6SDz4NqyDMn9ZV
+      - POSTGRES_DB=hl_test
+
+  be:
+    build:
+      context: ../../
+      dockerfile: docker/test/Dockerfile
+    image: hl-test-be
+    container_name: hl-test-be
+    ports:
+      - "3310:3310"
+    depends_on:
+      - db
+    env_file:
+      - ../../.env
+
+volumes:
+  hl_db_test_data:  

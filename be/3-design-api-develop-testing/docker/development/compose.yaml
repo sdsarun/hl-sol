@@ -1,0 +1,28 @@
+services:
+  db:
+    image: postgres:16.8
+    container_name: hl-dev-db
+    restart: always
+    volumes:
+      - hl_db_dev_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=P6SDz4NqyDMn9ZV
+      - POSTGRES_DB=hl_dev
+
+  be:
+    build:
+      context: ../../
+      dockerfile: docker/development/Dockerfile
+    image: hl-dev-be
+    container_name: hl-dev-be
+    ports:
+      - "3310:3310"
+    depends_on:
+      - db
+    env_file:
+      - ../../.env
+
+volumes:
+  hl_db_dev_data:  
