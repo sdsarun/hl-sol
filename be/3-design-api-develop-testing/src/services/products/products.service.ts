@@ -74,6 +74,9 @@ export class ProductsService {
     payload: GetProductsDTO,
     options?: ServiceActionOptions & { transaction?: Transaction },
   ) {
+    if (options?.validateDTO) {
+      await validateDTO(payload, options);
+    }
     try {
       const offset: number = payload?.offset ?? 0;
       const limit: number = payload?.limit ?? 10;
