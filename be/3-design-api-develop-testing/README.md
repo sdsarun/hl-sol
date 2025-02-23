@@ -23,7 +23,7 @@ If i use two tables: one for the core product information that doesn't depend on
 
 
 
-#### Table: **product_transactions**
+#### Table: **product_transalations**
 | column_name   | data_type     | primary key | foreign_key          | not_null | remark |
 |---------------|---------------|-------------|----------------------|----------|--------|
 | **id**        | uuid          | ✔️          |                      | ✔️       |        |
