@@ -4,7 +4,7 @@
 
 I use two tables:
 - `products` - for store product information like price, quantity etc.
-- `product_tranlations` - for store only fields for products table that required any langueges.
+- `product_transalations` - for store only fields for products table that required any langueges.
 
 ### Why store in two tables?
 If i store language data in the product table with one column per language (e.g., for Thai and English), I would need separate columns for each language field. 
